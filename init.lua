@@ -19,3 +19,19 @@ end
 dofile(vim.g.base46_cache .. "defaults")
 vim.opt.rtp:prepend(lazypath)
 require "plugins"
+
+-- directories local to the current directory
+vim.opt.rtp:append(".cache")
+vim.opt.rtp:append(".local")
+
+-- Use tabs instead of spaces
+vim.opt.expandtab = false
+
+-- Tab size
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+
+-- disable the recommended options for python
+vim.cmd("let g:python_recommended_style = 0")
+
+

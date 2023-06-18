@@ -64,4 +64,19 @@ require("lspconfig").lua_ls.setup {
   },
 }
 
+-- clangd language server
+
+require("lspconfig").clangd.setup {
+	on_attach = M.on_attach,
+	capabilities = M.capabilities,
+	root_dir = vim.fs.dirname()
+}
+
+require("lspconfig").rust_analyzer.setup {
+	on_attach = M.on_attach,
+	capabilities = M.capabilities,
+	cmd = {"rust-analyzer"},
+	root_dir=require("lspconfig").util.root_pattern("Cargo.toml")
+
+}
 return M
